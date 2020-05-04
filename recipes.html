@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Dr Birch's Jam Engine - Recipe Book</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <span class="sitetitle">Dr Birch's Jam Engine</span> <a href="dashboard.html" target="_blank">Dashboard</a>
+            <a href="#" target="_blank">Pantry</a> <a href="recipes.html" target="_blank">Recipes</a> <a class="icon"
+                href="javascript:void(0);" onclick="expandMenu()"><i class="fa fa-bars"></i></a>
+        </div>
+    </header>
+    <main class="innerpage">
+        <section class="pagetitle">
+            Recipe Book
+        </section>
+        <section id="recipebook">
+            <ul id="recipelist">
+                <li>
+                    <a href="#" target="_blank">Eliza Acton's Genuine Scotch Marmalade</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Orange &amp; Ginger Marmalade</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Thick Dark Marmalade</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Quince Preserve</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Raspberry Jam</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Strawberry Jam</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Redcurrant &amp; Blueberry Jam</a>
+                </li>
+
+            </ul><button class="actionbutton" id="addrecipe-button" onclick="dummyFunction()">Add a new recipe</button>
+        </section><input class="actionbutton" id="backtodash" onclick="location.href='dashboard.html';" type="button"
+            value="Return to my dashboard">
+    </main>
+    <footer>
+        <div id="footerdate">
+        </div>
+    </footer>
+    <script>
+        //this script puts a footer on the page which automatically shows the current year
+        document.getElementById('footerdate').innerHTML = `&copy; Dr Birch's Jam Engine ${(new Date().getFullYear())}`;
+    </script>
+</body>
+
+</html>

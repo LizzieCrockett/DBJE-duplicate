@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+	<title>Dr Birch's Jam Engine - Dashboard</title>
+	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="favicon.ico" rel="icon" type="image/x-icon">
+	<script src="scripts.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="topnav" id="myTopnav">
+			<span class="sitetitle">Dr Birch's Jam Engine</span> <a href="dashboard.html" target="_blank">Dashboard</a>
+			<a href="#" target="_blank">Pantry</a> <a href="recipes.html" target="_blank">Recipes</a> <a class="icon"
+				href="javascript:void(0);" onclick="expandMenu()"><i class="fa fa-bars"></i></a>
+		</div>
+	</header>
+	<main class="innerpage">
+		<section class="pagetitle" id="anthonyGreeting"></section>
+		<section id="possibleactions">
+			<a href="add-stock.html"><img src="img/additem.png" alt="add item icon"></a> <a href="#"><img
+					src="img/removeitem.png" alt="remove item icon"></a> <a href="#"><img src="img/viewpantry.png"
+					alt="view pantry icon"></a> <a href="recipes.html"><img src="img/viewrecipes.png"
+					alt="recipe book icon"></a>
+		</section><button class="actionbutton" id="signout" onclick="confirmSignOut()">Sign out</button>
+	</main>
+	<footer>
+		<div id="footerdate">
+		</div>
+	</footer>
+	<script>
+
+		// time-dependent greeting code
+		// determines the current time and returns an appropriate greeting for the time of day
+		const myDate = new Date();
+		const hrs = myDate.getHours();
+		let greetAnt;
+		if (hrs < 12)
+			greetAnt = 'Good morning';
+		else if (hrs >= 12 && hrs <= 17)
+			greetAnt = 'Good afternoon';
+		else if (hrs >= 17 && hrs <= 24)
+			greetAnt = 'Good evening';
+		document.getElementById('anthonyGreeting').innerHTML =
+			`${greetAnt}, Anthony. </br> What would you like to do?`;
+
+		function confirmSignOut() {
+			const ask = window.confirm("Are you sure you want to sign out?");
+			if (ask) {
+				window.location.href = "index.html";
+			}
+		}
+
+
+		//this script puts a footer on the page which automatically shows the current year
+		document.getElementById('footerdate').innerHTML = `&copy; Dr Birch's Jam Engine ${(new Date().getFullYear())}`;
+
+
+	</script>
+</body>
+
+
+</html>

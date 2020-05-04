@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Dr Birch's Jam Engine - Add Stock</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <span class="sitetitle">Dr Birch's Jam Engine</span> <a href="dashboard.html" target="_blank">Dashboard</a>
+            <a href="#" target="_blank">Pantry</a> <a href="recipes.html" target="_blank">Recipes</a> <a class="icon"
+                href="javascript:void(0);" onclick="expandMenu()"><i class="fa fa-bars"></i></a>
+        </div>
+    </header>
+    <main class="innerpage">
+        <section class="pagetitle">
+            Add new items
+        </section>
+        <form id="additems" method="get" name="additems">
+            <div id="productdetails">
+                <div id="productname">
+                    <label for="productname">Product name:</label> <input list="existing" name="existing"> <datalist
+                        id="existing">
+                        <option value="Eliza Acton's Genuine Scotch Marmalade">
+                            Eliza Acton's Genuine Scotch Marmalade
+                        </option>
+                        <option value="Orange &amp; Ginger Marmalade">
+                            Orange &amp; Ginger Marmalade
+                        </option>
+                        <option value="Thick Dark Marmalade">
+                            Thick Dark Marmalade
+                        </option>
+                        <option value="Quince Preserve">
+                            Quince Preserve
+                        </option>
+                        <option value="Raspberry Jam">
+                            Raspberry Jam
+                        </option>
+                        <option value="Strawberry Jam">
+                            Strawberry Jam
+                        </option>
+                        <option value="Peach Jam">
+                            Peach Jam
+                        </option>
+                        <option value="Redcurrant &amp; Blueberry Jam">
+                            Redcurrant &amp; Blueberry Jam
+                        </option>
+                    </datalist>
+                </div>
+                <div id="dateofproduction">
+                    <label for="dateofproduction">Date of production:</label> <input id="dateofproduction"
+                        name="dateofproduction" type="date">
+                </div>
+                <div id="quantity">
+                    <label for="quantity">Quantity:</label> <input id="quantity" min="1" name="quantity" type="number">
+                </div>
+            </div><button class="actionbutton" id="additem-button" onclick="dummyFunction()" type="submit">Add to the
+                pantry</button>
+        </form><input class="actionbutton" id="backtodash" onclick="location.href='dashboard.html';" type="button"
+            value="Return to my dashboard">
+    </main>
+    <footer>
+        <div id="footerdate">
+        </div>
+    </footer>
+    <script>
+        //this script puts a footer on the page which automatically shows the current year
+        document.getElementById('footerdate').innerHTML = `&copy; Dr Birch's Jam Engine ${(new Date().getFullYear())}`;
+    </script>
+</body>
+
+
+</html>

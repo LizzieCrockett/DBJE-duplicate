@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Dr Birch's Jam Engine</title>
+	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="favicon.ico" rel="icon" type="image/x-icon">
+</head>
+
+<body>
+	<header>
+		<div class="slideshow-container">
+			<div class="mySlides fade"><img alt="a row of jams and pickles" src="img/jam1.jpg" style="width:100%"></div>
+			<div class="mySlides fade"><img alt="a row of jams on a market stall" src="img/jam2.jpg" style="width:100%">
+			</div>
+			<div class="mySlides fade"><img alt="the word 'Jam' written in jam on some toast" src="img/jam3.jpg"
+					style="width:100%"></div>
+			<div id="frontpagetitle">
+				Dr Birch's Jam Engine
+			</div><a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next"
+				onclick="plusSlides(1)">&#10095;</a>
+		</div>
+	</header>
+	<main>
+		<section id="menu">
+			<div id="guestGreeting"></div>
+			<ul id="menulist">
+				<li>Eliza Acton's Genuine Scotch Marmalade</li>
+				<li>Orange &amp; Ginger Marmalade</li>
+				<li>Thick Dark Marmalade</li>
+				<li>Quince Preserve<span class="clearance">Clearance - last few jars!</span></li>
+				<li>Raspberry Jam</li>
+				<li>Strawberry Jam</li>
+				<li>Peach Jam<span class="clearance">Clearance - last few jars!</span></li>
+				<li>Redcurrant &amp; Blueberry Jam</li>
+				<li>Eliza Acton's Genuine Scotch Marmalade</li>
+				<li>Orange &amp; Ginger Marmalade</li>
+				<li>Thick Dark Marmalade</li>
+				<li>Quince Preserve<span class="clearance">Clearance - last few jars!</span></li>
+				<li>Raspberry Jam</li>
+				<li>Strawberry Jam</li>
+				<li>Peach Jam<span class="clearance">Clearance - last few jars!</span></li>
+				<li>Redcurrant &amp; Blueberry Jam</li>
+			</ul>
+		</section>
+		<form id="signin" name="signin">
+			<div id="signin-invite">
+				To enter the pantry, sign in here:
+			</div>
+			<div id="usernamepassword">
+				<input id="username" name="username" placeholder="username" type="text"><br>
+				<input id="pwd" name="pwd" placeholder="password" type="password">
+			</div><button class="actionbutton" id="signin-button" onclick="dummyFunction()" type="submit">Enter the
+				pantry</button>
+		</form>
+	</main>
+	<footer>
+		<div id="footerdate">
+		</div>
+	</footer>
+	<script>
+
+		// time-dependent greeting code
+		// determines the current time and returns an appropriate greeting for the time of day
+		const myDate = new Date();
+		const hrs = myDate.getHours();
+		let greet;
+
+		if (hrs < 12) greet = 'Good morning';
+		else if (hrs >= 12 && hrs <= 17) greet = 'Good afternoon';
+		else if (hrs >= 17 && hrs <= 24) greet = 'Good evening';
+		document.getElementById('guestGreeting').innerHTML = `${greet}, jam enthusiast. <br/> Here's what's currently in the pantry. <br/> Orders are first come first served, <br/> so pick up the phone!`;
+
+		//slideshow code
+		//establishes slide index to display in showSlides() as 1
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		//event on .prev and .next buttons
+		//adds the value passed as an argument (n) to slideIndex
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		//defines the current slide as the value passed as an argument (n) and runs showSlides with that argument as slideIndex
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		//see line 23 to see what parameter is passed
+		function showSlides(n) {
+			let i;
+			//grabs the slide images from the DOM
+			const slides = document.getElementsByClassName("mySlides");
+			//if the length of (n) is greater than the length of "slides", display slide 1
+			if (n > slides.length) {
+				slideIndex = 1
+			}
+			//if it's smaller than 1, display the length of "slides"
+			if (n < 1) {
+				slideIndex = slides.length
+			}
+			//runs a counter beginning at 0 and ending at the length of "slides", which styles the given index not to display 
+			//only displays one slide, the one at the given index -1 
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slides[slideIndex - 1].style.display = "block";
+		}
+
+		//this script puts a footer on the page which automatically shows the current year
+		document.getElementById('footerdate').innerHTML = `&copy; Dr Birch's Jam Engine ${(new Date().getFullYear())}`;
+
+	</script>
+</body>
+
+
+</html>

@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two|Rhodium+Libre|Staatliches&display=swap");
+/* site-wide settings*/
+
+body {
+	text-align: center;
+	font-size: 16px;
+}
+
+main {
+	font-family: "Rhodium Libre";
+}
+
+.actionbutton {
+	background-color: #feac71;
+	border: none;
+	color: black;
+	height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+	font-family: "Rhodium Libre";
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 10px;
+}
+
+a:link {
+	color: #a50b5e;
+}
+
+a:visited {
+	color: #a50b5e;
+}
+
+footer {
+	font-size: 12px;
+	margin-top: 30px;
+}
+
+footer,
+#frontpagetitle {
+	font-family: "Staatliches";
+}
+
+
+/* page-specific settings */
+
+#frontpagetitle {
+	font-size: 21px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 1px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#guestGreeting {
+	margin-top: 1em;
+}
+
+#menulist {
+	overflow: scroll;
+}
+#menulist,
+#recipelist {
+	align-self: center;
+	border: 1px dotted grey;
+	text-align: left;
+	list-style-type: none;
+	padding-inline-start: 5px;
+	padding-inline-end: 5px;
+	padding-block-start: 5px;
+	padding-block-end: 5px;
+}
+
+.clearance {
+	font-family: "Lobster Two";
+	color: white;
+	background-color: #a50b5e;
+	margin-left: 50px;
+}
+
+#signin,
+#menu,
+#recipebook {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#signin input {
+	font-family: "Lobster Two";
+	text-align: center;
+	height: 30px;
+	border: 1px solid black;
+	font-size: 24px;
+	margin: 5px;
+}
+
+#signin-button {
+	align-self: center;
+	margin-top: 5px;
+}
+
+#signin-button ::placeholder {
+	font-family: "Lobster Two";
+	text-align: center;
+}
+
+.sitetitle {
+	color: #a50b5e;
+	font-size: 30px;
+	font-family: "Lobster Two";
+}
+
+.pagetitle {
+	font-family: "Lobster Two";
+	font-size: 2em;
+	margin-top: 15px;
+	margin-bottom: 35px;
+}
+
+#possibleactions {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+#possibleactions img {
+	height: 150px;
+	width: 150px;
+	padding: 10px;
+}
+
+#possibleactions a:hover {
+	background-color: #a50b5e;
+}
+
+#additems {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 35px;
+}
+
+#productdetails input {
+	height: 30px;
+	font-size: 20px;
+	text-align: center;
+	margin: 5px;
+	border: 1px solid black;
+	font-family: "Rhodium Libre";
+	max-width: 60%;
+}
+
+#productname,
+#dateofproduction,
+#quantity {
+	margin: 10px;
+}
+
+#quantity input {
+	max-width: 20%;
+}
+
+#additem-button,
+#addrecipe-button {
+	margin: 10px;
+	max-width: 50%;
+	align-self: center;
+	color: white;
+	background-color: #a50b5e;
+}
+
+#recipebook {
+	margin-bottom: 35px;
+}
+
+/*front page slideshow settings*/
+
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	transition: 0.6s ease;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev {
+	left: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {
+		opacity: .4
+	}
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: .4
+	}
+	to {
+		opacity: 1
+	}
+}
+
+/* nav menu settings */
+
+.topnav {
+	overflow: hidden;
+	font-family: "Rhodium Libre";
+}
+
+.topnav a {
+	display: none;
+	text-decoration: none;
+	color: black;
+}
+
+.topnav a:hover {
+	color: #a50b5e;
+}
+
+.topnav a.active {
+	color: #a50b5e;
+}
+
+.topnav a.icon {
+	float: right;
+	display: block;
+	font-size: 2em;
+	color: black;
+	margin-right: 10px;
+	background-color: white;
+}
+
+.topnav.responsive {
+	position: relative;
+}
+
+.topnav.responsive a.icon {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 2em;
+	margin-right: 10px;
+}
+
+.topnav.responsive a {
+	float: none;
+	display: block;
+	text-align: center;
+	font-size: 18px;
+}
+
+@media screen and (min-width: 1000px) {
+  
+  /*site-wide settings*/
+
+	body {
+		font-size: 20px;
+	}
+
+	.innerpage {
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+
+	.actionbutton {
+		height: 35px;
+		font-size: 18px;
+ 	 }
+  
+	.sitetitle {
+		margin-right: 200px;
+		font-size: 40px;
+  	}
+  
+	footer {
+		font-size: 16px;
+		position: absolute; 
+		left: 0;
+		right: 0; 
+		bottom: 0;
+  	}
+    
+  /*page-specific settings*/
+  
+	#frontpagetitle {
+		font-size: 60px;
+		padding: 5px;
+  	}
+  
+	#guestGreeting {
+		min-width: 50%;
+		text-align: right;
+		margin-right: 12.5px;
+  	}
+  
+	#menu {
+		flex-direction: row;
+		justify-content: stretch;
+  }
+  
+	#menulist {
+		margin-left: 12.5px;
+		max-height: 300px;
+	}
+  
+  
+	#signin {
+		flex-direction: row;
+		justify-content: center;
+  }
+  
+	#signin-invite {
+		margin-top: 10px;
+  }
+  
+	#usernamepassword {
+		margin: 10px;
+  }
+  
+	#signin-button {
+		align-self: flex-end;
+		margin-bottom: 15px;
+  }
+  
+	#possibleactions {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+  }
+  
+	#additems {
+		flex-direction: row;
+		justify-content: center;
+  }
+  
+	#additem-button {
+		margin-bottom: 15px;
+		align-self: flex-end;
+  }
+  
+	#recipelist {
+		width: 50%;
+		text-align: center;
+  }
+
+
+  
+	/* nav menu settings */
+  
+  .topnav .icon {
+		display: none;
+	}
+  
+  .topnav a.icon {
+		display: none;
+	}
+  
+  .topnav.responsive a {
+		display: none;
+	}
+  
+  .topnav a {
+		display: inline-flex;
+		justify-content: space-between;
+		color: gray;
+		text-align: center;
+		padding: 14px 16px;
+		font-size: 24px;
+  }
+  
+}
